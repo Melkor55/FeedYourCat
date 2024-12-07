@@ -1,0 +1,17 @@
+# Node modules
+node_modules
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Environment variables
+.env
+
+# SQLite database
+database.sqlite
+
+# Git files
+.git
+.gitignore
