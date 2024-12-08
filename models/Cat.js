@@ -8,13 +8,16 @@ const Cat = sequelize.define('Cat', {
     allowNull: false
   },
   age: {
-    type: DataTypes.INTEGER,
+    type: DataTypes.ENUM,
+    values: ['kitten', 'adult', 'senior'],
     allowNull: false
   },
   breed: {
     type: DataTypes.STRING,
     allowNull: false
   }
+}, {
+  timestamps: false
 });
 
 module.exports = Cat;

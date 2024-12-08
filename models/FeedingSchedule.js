@@ -13,6 +13,8 @@ const FeedingSchedule = sequelize.define('FeedingSchedule', {
     type: DataTypes.FLOAT,
     allowNull: false
   }
+}, {
+  timestamps: false
 });
 
 Cat.hasMany(FeedingSchedule);

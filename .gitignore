@@ -9,5 +9,3 @@ npm-debug.log*
 # Environment variables
 .env
 
-# SQLite database
-database.sqlite

@@ -1,14 +1,19 @@
 // index.js
 const express = require('express');
 const sequelize = require('./config/database');
-const Cat = require('./models/Cat');
-const Food = require('./models/Food');
-const FeedingSchedule = require('./models/FeedingSchedule');
+const catRoutes = require('./routes/catRoutes');
+const foodRoutes = require('./routes/foodRoutes');
+const feedingScheduleRoutes = require('./routes/feedingScheduleRoutes');
+const cors = require('cors');
 
 const app = express();
 app.use(express.json());
+app.use(cors());
+app.use('/api', catRoutes);
+app.use('/api', foodRoutes);
+app.use('/api', feedingScheduleRoutes);
 
-sequelize.sync({ force: true }).then(() => {
+sequelize.sync({ alter: true }).then(() => {
   console.log('Database synced');
 });
 
